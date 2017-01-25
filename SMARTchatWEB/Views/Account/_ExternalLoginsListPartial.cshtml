@@ -1,0 +1,29 @@
+﻿@model SMARTchatWEB.Models.ExternalLoginListViewModel
+@using Microsoft.Owin.Security
+
+<hr />
+@{
+    var loginProviders = Context.GetOwinContext().Authentication.GetExternalAuthenticationTypes();
+    if (loginProviders.Count() == 0) {
+        <div>
+            <p>
+                Внешние службы проверки подлинности не настроены. В <a href="http://go.microsoft.com/fwlink/?LinkId=403804">этой статье</a>
+                вы можете узнать о том, как в этом приложении ASP.NET настроить вход через внешние службы.
+            </p>
+        </div>
+    }
+    else {
+        using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = Model.ReturnUrl })) {
+            @Html.AntiForgeryToken()
+            <div id="socialLoginList">
+                <p>
+                    @*@ @foreach (AuthenticationDescription p in loginProviders) {
+                        <button type="submit" class="btn btn-default" id="@p.AuthenticationType" name="provider" value="@p.AuthenticationType" title="Войти с помощью учетной записи @p.Caption">@p.AuthenticationType</button>
+                    }*@
+                </p>
+                <button type="submit" style="color: #666666; background: transparent; border: none;" class="fa fa-google-plus-square fa-2x" id="@loginProviders.ToArray()[0].AuthenticationType" name="provider" value="@loginProviders.ToArray()[0].AuthenticationType" title="Войти с помощью учетной записи @loginProviders.ToArray()[0].Caption"></button>
+                <button type="submit" style="color: #666666; width: 0; height: 0; background: transparent; border: none;" class="fa fa-facebook-square fa-2x" id="@loginProviders.ToArray()[1].AuthenticationType" name="provider" value="@loginProviders.ToArray()[1].AuthenticationType" title="Войти с помощью учетной записи @loginProviders.ToArray()[1].Caption"></button>
+            </div>
+        }
+    }
+}

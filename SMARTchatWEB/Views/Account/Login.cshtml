@@ -1,0 +1,64 @@
+﻿@using SMARTchatWEB.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "SMARTchat | Log in";
+    ViewBag.ReturnUrl = ViewBag.ReturnUrl;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Content/style.css" media="screen" type="text/css" />
+    <link rel="icon" href="/Content/Images/smart.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/Content/Images/smart.png" type="image/x-icon">
+    <link rel="stylesheet" href="/Content/font-awesome-4.6.3/css/font-awesome.min.css">
+</head>
+<body>
+    <header align="center">
+        <img src="/Content/Images/smart_logo.png" alt="SMARTbusiness">
+        <h3>Create your own channels and invite colleagues to them</h3>
+    </header>
+    <div class="login">
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <fieldset class="clearfix" >
+                <p><span class="fa fa-user"></span>
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                </p>
+                <p><span class="fa fa-lock"></span>
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                </p>
+                <p id="sign"><input type="submit" value="Log in"></p>
+            </fieldset>
+        }
+        @*<div>
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+        </div>*@
+        @*<div class="login_with">
+            <p>Log in with:</p>
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            @*<a href="#" class="fa fa-facebook-square fa-2x">&nbsp;&nbsp;</a>
+            <a href="#" class="fa fa-google-plus-square fa-2x"></a>
+        </div>*@
+        @*<hr>*@
+        <p>
+            If you don`t have account use&nbsp;&nbsp;@Html.ActionLink("Sign up", "Register", "Account",new {ReturnUrl= ViewBag.ReturnUrl},FormMethod.Get)
+            <span class="fontawesome-arrow-right"></span>
+        </p>
+        <div class="col-md-4">
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+        </div>
+       @*@ <a href="#" class="fa fa-facebook-square fa-2x">&nbsp;&nbsp;</a>
+        <a href="#" class="fa fa-google-plus-square fa-2x"></a>*@
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</body>
+</html>

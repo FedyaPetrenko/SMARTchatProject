@@ -1,0 +1,954 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+@import url(http://meyerweb.com/eric/tools/css/reset/reset.css);
+
+/* ---------- FONTAWESOME ---------- */
+
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
+
+/* ---------- GENERAL ---------- */
+
+
+body {
+    overflow:  hidden;
+	background:  url(../Content/Images/bg.jpg) repeat;
+	color: #606468;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    min-width: 300px;
+}
+
+a {
+	color:#595959;
+	text-decoration: none;
+	font-size: 18px;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+input::-webkit-input-placeholder { color: #666666; }
+
+
+input {
+	border: none;
+	color: #333333;
+	font-family: 'Open Sans', Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	padding: 0;
+	-webkit-appearance: none;
+}
+
+
+
+p {
+	line-height: 1.5em;
+}
+
+
+.smarticon {
+    position: relative;
+    margin-top: -3%; 
+}
+
+.login form span {
+	background-color:   #70db70;
+	border-radius: 3px 0px 0px 3px;
+	color: #666666;
+	display: block;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	width: 50px;
+}
+
+.login form input {
+	height: 50px;
+	outline:none;
+	color: #333333;
+}
+
+.login form input:focus {
+	color:#333333;
+}
+
+
+.login,.newChat {
+    position: fixed;
+    margin-left: 40%;
+    margin-top: 5%;
+     display: inline;
+}
+.login > p {
+	text-align: center;
+    
+}
+
+.login > p span {
+	padding-left: 5px;
+    float: right;
+    display: inline;
+}
+
+
+.login_with{
+	text-align: center;
+
+}
+.login_with a:hover{
+	text-decoration: none;
+}
+
+.login form input[type="text"],.login form  input[type="password"] {
+	background-color: #80ff80;
+	border-radius: 0px 3px 3px 0px;
+	color: #808080;
+	margin-bottom: 1em;
+	padding: 0 10px;
+	width: 230px;
+}
+
+#sign input {
+    width: 280px;
+    border-radius: 3px;
+	background-color:#009933;
+	color: #eee;
+	font-weight: bold;
+	margin-bottom: 2em;
+	text-transform: uppercase;
+	cursor:pointer;
+}
+
+
+.mainButton input[type="submit"], #signup input
+{
+    width: 250px;
+    border-radius: 6px;
+	background-color:#009933;
+	color: #eee;
+	font-weight: bold;
+	margin-bottom: 2em;
+	text-transform: uppercase;
+	cursor:pointer;
+    height: 45px;
+    float: right;
+}
+.sign_in {
+    width: 420px;
+    position: relative;
+    margin-left: 31%;
+}
+.form-group {
+    max-width: 390px;
+    position: relative;
+    margin: 2% 30%;
+}
+
+.form-group label {
+  float: left;
+  width: 130px;   
+  text-align: right; 
+
+}
+
+.form-group input {
+  width: 250px;
+  margin: 0 0 20px 10px;
+  height: 40px;
+}
+		/*chat page*/
+
+.chatContainer {
+    position: relative;
+    height: 100%;
+    width: 80%;
+    float: left;
+}
+#sidebar {
+    position: relative;
+    float: left;
+    width: 23%;
+    height: 100%;
+}
+.channels{
+     margin-left: 42%;
+     margin-top: 5%;
+    font:bold 18px Verdana;
+    line-height: 20px;
+}
+
+#sidebar ul{
+    padding: 0;
+    list-style: none;
+    margin-top: 30px;
+}
+
+#sidebar ul li {
+    padding: 15px 20px;
+    font-size: 16px;
+    font-weight: 100;
+    color: #333333;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #009933;
+}
+#sidebar ul li:hover, .channels  ul li:hover{
+    background:#70db70;
+} 
+
+
+
+#sidebar, .users{
+	font-size: 18px;
+	font-weight: 100;
+    color: #4d4d4d;
+    text-decoration: none;
+    display: block;
+    transition:  background 0.3s ease-in-out;
+    padding: 15px;
+
+    height: 100%;
+}
+.users {
+    border-radius: 10px;
+    box-shadow: 8px 6px 37px -6px rgba(0,0,0,0.75);
+    max-width: 240px;
+    word-wrap: break-word;
+    max-height: 355px;
+    overflow: auto;
+    overflow-x: hidden;
+
+
+}
+.users li:hover{
+    border-radius: 10px;
+
+}
+.footer-panel{
+	position: absolute;
+    margin-left: 25%;
+    margin-top: 42%;
+    width: 73%;
+    height: 23%;
+
+}
+
+.main-content {
+    height: 90%;
+}
+
+.addCode{
+	float:left;
+	width:45px;
+    border-radius: 10px;
+	margin-top: 1%;
+	color: #595959;
+    background-color:  #f4a460;
+}
+
+#message{
+    background-color: #f2f2f2;
+	color: #333333;
+	height:22%;
+    width: 73%;
+	border-radius: 8px;
+	font-size: 16px;
+	position: relative;
+
+}
+textarea::-webkit-input-placeholder { color: #333333;
+font:14px Verdana; }
+
+#send input[type="button"]{	
+	vertical-align: top;
+	border-radius: 8px;
+	background-color:#009933;
+	color: #eee;
+	font-weight: bold;
+	margin-bottom: 2em;
+	text-transform: uppercase;
+	cursor:pointer;
+	width: 19.5%;
+    height: 46px;
+	display: inline;
+}
+
+#favmessagebox {
+    margin-left: 30px;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+}
+
+.messages{
+	background-color: #f2f2f2;
+	border-radius: 10px;
+	width: 100%;
+	position: relative;
+    border-spacing: 0;
+}
+
+.messages tr {
+    box-shadow: 1px -1px 41px -4px #757575 inset;
+    border-radius: 10px;
+    height: 70px;
+
+}
+
+#messageInfo, .mailInfo{
+	color: #006600;
+	font:bold 14px Verdana;
+    margin-top: 10px;
+    width: 73%;
+}
+
+#messageInfo span, .mailInfo{
+	color: #666666;
+	font:15px Verdana;
+}
+
+#messageText{
+	color: #333333;
+	font:15px Georgia;
+    position: relative;
+    width: 85%;
+    max-width: 450px;
+    word-wrap: break-word;
+    height: auto;
+
+}
+
+#user_icon, .avatar{
+	width: 50px;
+	height: 50px;
+	border-radius: 8px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+
+
+
+.chat_name{
+	position: relative;
+    margin-left: 25%;
+	font: bold 20px Arial;
+	color:#dc143c;
+}
+.chat_name input{
+	margin-left: 2%;
+	font: 15px Arial;
+	color:#666666;
+}
+
+#rightsidebar {
+    position: relative;
+    float: left;
+    display: inline;
+    width: 18%;
+    height: 85%;
+}
+#rightsidebar ul {
+    padding: 0;
+    list-style: none;
+    margin-top: 20px;
+}
+
+#rightsidebar ul li{
+    
+    padding: 15px;
+    font-size: 18px;
+    font-weight: 100;
+    color: #666666;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid  #ff8533;
+    transition:  background 0.3s ease-in-out;
+}
+#rightsidebar ul li:hover {
+    background: #ff8533;
+} 
+ul {
+    list-style-type: none;
+}
+
+#messagebox {
+    position: absolute;
+    margin-top: 1%;
+    margin-left: 24%;
+    background-color: #f2f2f2;
+    height: 430px;
+    max-height: 430px;
+    width: 74%;
+    overflow: auto;
+    overflow-y:auto;
+    overflow-x:hidden;
+    border-radius: 10px;
+}
+
+
+.editMessage,.deleteMessage, .markFavourite,.editChatName, .deleteChat, .selectMessage {
+    width: 25px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    margin-right: 3px;
+    margin-top: 20px;
+}
+.editMessage,.editChatName  {
+    background-color: #009933;
+}
+.markFavourite{
+    background-color: #f4a460;
+}
+.deleteMessage, .deleteChat{
+    background-color: #dc143c;
+}
+.editChatName, .deleteChat {
+    width: 35px;
+    margin-left: 15px; 
+}
+
+.selectMessage {
+    background-color: #3385ff;
+}
+
+/*profile page*/
+
+
+.first  {
+list-style: none;
+padding: 0;
+margin-top: 30px;
+float: left;
+min-width: 30%;
+width: 400px;
+
+}
+
+#userEmail {
+    background-color:#006600;
+}
+#userLName {
+  background-color:  #00b300 ;
+}
+
+#userName {
+    background-color:#85e085;
+}
+.first li {
+padding: 10px 10px;
+border-bottom: 1px solid grey;
+color: #f2f2f2;
+font-size: 20px;
+box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
+margin-bottom: 15px;
+margin-left: 5%;
+height: auto;
+    border-radius: 10px;
+
+}
+.first li:last-child {
+border-bottom: none;
+}
+.first li span:nth-child(odd) {
+    float: right;
+}
+.info {
+    font-size: 30px;
+    color: #666666;
+    text-align: center;
+    font-family: Times, serif;
+    border-bottom-style: groove;
+    border-bottom-width: 3px;
+    margin-bottom: 40px;
+}
+#avatar {
+    float: right;
+    /* make a square container */
+    width: 200px;
+    height: 200px;
+    margin-right:15%;
+    /* fill the container, preserving aspect ratio, and cropping to fit */
+    background-size: cover;
+
+    /* center the image vertically and horizontally */
+    background-position: center;
+
+    /* round the edges to a circle with border radius 1/2 container size */
+    border-radius: 8%;
+}
+
+/* Styles for button to download photo*/
+.file_upload{
+    display: block;
+    position: relative;
+    overflow: hidden;
+    font-size: 1em;              /* example */
+    height: 3em;                 /* example */
+    line-height: 3em;
+               /* the same as height */
+}
+.file_upload .button, .file_upload > mark{
+    display: block;
+    cursor: pointer              /* example */
+}
+.file_upload .button{
+    float: right;
+    margin-right: 5px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 8em;                  /* example */
+    height: 100%;
+    text-align: center;
+    margin-top: 3px; 
+          /* example */
+}
+.file_upload > mark{
+    background: transparent;     /* example */
+    padding-left: 1em            /* example */
+}
+@media only screen and ( max-width: 500px ){  /* example */
+    .file_upload > mark{
+        display: none
+    }
+    .file_upload .button{
+        width: 90%;
+        
+    }
+}
+.file_upload input[type=file]{
+    position: absolute;
+    top: 0;
+    opacity: 0
+}
+
+/* Making it beautiful */
+
+.file_upload{
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.1s linear
+}
+.file_upload.focus{
+    box-shadow: 0 0 5px rgba(255, 204, 153,0.4)
+}
+.file_upload .button{
+    background: #196619;
+    transition: background 0.2s;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #fff;
+    text-shadow: #008000 0 -1px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+.file_upload:hover .button{
+    background: #004d00;
+    text-shadow: #008000 0 -1px 0
+}
+.file_upload:active .button{
+    background:#008000;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3) inset
+}
+
+
+.submit {
+    position: relative;
+    margin-left: 11%;
+    margin-top: 8px;
+	cursor: pointer;
+	border: 1px solid #cecece;
+	background: #f6f6f6;
+	box-shadow: inset 0px 20px 20px #ffffff;
+	border-radius: 8px;
+	padding: 8px 14px;
+    width: 120px;
+}
+.submit:hover {
+	box-shadow: inset 0px -20px 20px #ffffff;
+}
+
+.button28 {
+    float: right;
+  position: relative;
+  display: inline-block;
+  font-size: 90%;
+  font-weight: 700;
+  color: rgb(209,209,217);
+  text-decoration: none;
+  text-shadow: 0 -1px 2px rgba(0,0,0,.2);
+  padding: .5em 1em;
+  outline: none;
+  border-radius: 3px;
+  background:#32cd32;
+  box-shadow:
+   0 1px rgba(255,255,255,.2) inset,
+   0 3px 5px rgba(0,1,6,.5),
+   0 0 1px 1px rgba(0,1,6,.2);
+  transition: .2s ease-in-out;
+}
+.rounded-list a {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 2em;
+    *padding: .4em;
+    width: 350px;
+    margin-top: 10px;
+    background: limegreen;
+    color: #444;
+    text-decoration: none;
+    -moz-border-radius: .3em;
+    -webkit-border-radius: .3em;
+    border-radius: .3em;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;	
+}
+ 
+.rounded-list a:hover {
+    background: orange;
+}
+ 
+.rounded-list a:hover:before {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);	
+}
+ 
+.rounded-list a:before {
+    content:"\1F60A";
+    position: absolute;	
+    left: -1.3em;
+    top: 20%;
+    margin-top: -1em;
+    background: #87ceeb;
+    height: 2em;
+    width: 2em;
+    line-height: 2em;
+    border: .3em solid #fff;
+    text-align: center;
+    font-weight: bold;
+    -moz-border-radius: 2em;
+    -webkit-border-radius: 2em;
+    border-radius: 2em;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -ms-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.rounded-list {
+    float: left;
+}
+
+#messagehistory {
+    float:right;
+    position: relative;
+    width: 800px;
+    max-height: 450px;
+    overflow: auto;
+    overflow-y:auto;
+     overflow-x:hidden;
+}
+.goog {
+    background-color: transparent;
+    border: none;
+}
+
+.createChat,.findChat {
+    float: right;
+    display: block;
+}
+
+.cont {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.group {
+    float: right;
+    position: relative;
+    margin-right: 5%;
+}
+
+.group input {
+  width: 250px;
+  margin: 0 0 20px 10px;
+  height: 40px;
+  border-radius: 7px;
+}
+	
+.editing, .selected {
+    background-color: lightgreen;
+}
+
+#favourites {
+    margin-left: 5%;
+    height: 500px;
+    max-height: 500px;
+    width: 75%;
+    overflow: auto;
+    overflow-y:auto;
+    overflow-x:hidden;
+}
+
+
+ /*adaptive UI*/   
+
+@media screen and (min-width:680px) and (max-width:1120px) {
+.sign_in {
+    width: 320px;
+    position: relative;
+    margin-left:15%;
+}
+       .mainButton input[type="submit"], #signup input
+{
+    width: 250px;
+    border-radius: 6px;
+	background-color:#009933;
+	color: #eee;
+	font-weight: bold;
+	margin-bottom: 2em;
+	text-transform: uppercase;
+	cursor:pointer;
+    height: 45px;
+    float: right;
+}
+.group {
+    margin-bottom: 50px;
+    float:right;
+    position: relative;
+    margin-right: 5%;
+    display: block;
+}
+
+.group input {
+    float: right;
+  width: 250px;
+  margin: 0 0 20px 10px;
+  height: 40px;
+  border-radius: 7px;
+}
+.group-container {
+    display: block;
+    margin-left: 75%;
+    margin-right: 50px;
+}
+
+    #avatar img{
+        float: left;
+        width: 160px;
+        height: 160px;
+    }
+    .fileUpload {
+    position: relative;
+    overflow: hidden;
+    float: left;
+
+    }
+     .first  {
+list-style: none;
+padding: 0;
+     position: relative;
+     margin-top: 30px;
+float: left;
+min-width: 30%;
+width: 340px;
+}
+
+     #message{
+    background-color: #f2f2f2;
+	color: #333333;
+	height:22%;
+    width:65%;
+	border-radius: 8px;
+	font-size: 16px;
+	position: relative;
+}
+     
+#messageText{
+	color: #333333;
+	font:15px Georgia;
+    position: relative;
+    width: 60%;
+    max-width: 280px;
+    word-wrap: break-word;
+    height: auto;
+}
+.footer-panel{
+	position: relative;
+    margin-left: 25%;
+    margin-top: 20px; 
+    width: 73%;
+    height: 23%;
+}
+}
+
+@media screen and (max-width:700px) {
+
+        h4,h2 {
+            visibility: hidden;
+        }
+.cont {
+    display: block;
+}
+.group-container {
+    float: left;
+    margin-left: 30px;
+}
+.group {
+    margin-bottom: 10px;
+    float:left;
+    position: relative;
+    margin-left: 10%;
+    margin-top: 5%;
+    display: block;
+}
+.rounded-list {
+    margin-top: -50px;
+}
+
+ .first  {
+list-style: none;
+padding: 0;
+position: relative;
+margin-top: 20px;
+float: left;
+min-width: 30%;
+width: 350px;
+margin-left: 10%;
+}
+    .info {
+        visibility: hidden;
+    }
+        #avatar img{
+        float: left;
+        width: 160px;
+        height: 160px;
+            margin-right: 60%;
+            margin-top: -50px;
+    }
+
+          #message{
+    background-color: #f2f2f2;
+	color: #333333;
+	height:22%;
+    width:55%;
+	border-radius: 8px;
+	font-size: 16px;
+	position: relative;
+}
+
+#messageText{
+	color: #333333;
+	font:15px Georgia;
+    position: relative;
+    width: 50%;
+    max-width: 170px;
+    word-wrap: break-word;
+    height: auto;
+}
+.mailInfo {
+    width: 50%;
+}
+}
+
+@media screen and (min-height:401px) and (max-height:620px) {
+    .sign_in {
+    width: 420px;
+    position: relative;
+    margin-left: 35%;
+}
+.form-group {
+    max-width: 390px;
+    position: relative;
+    margin: 1% 30%;
+}
+
+.form-group label {
+  float: left;
+  width: 130px;   
+  text-align: right; 
+
+}
+
+.form-group input {
+  width: 250px;
+  margin: 0 0 10px 10px;
+  height: 40px;
+}
+#messagebox {
+    position: absolute;
+    margin-top: 1%;
+    margin-left: 24%;
+    background-color: #f2f2f2;
+    height: 380px;
+    max-height: 380px;
+    width: 74%;
+    overflow: auto;
+    overflow-y:auto;
+    overflow-x:hidden;
+    border-radius: 10px;
+}
+.footer-panel{
+	position: absolute;
+    margin-left: 25%;
+    margin-top: 400px;
+    width: 73%;
+    height: 23%;
+}
+}
+
+@media screen  and (max-height:510px) {
+    #messagebox {
+    position: absolute;
+    margin-top: 1%;
+    margin-left: 24%;
+    background-color: #f2f2f2;
+    height: 200px;
+    max-height: 200px;
+    width: 74%;
+    overflow: auto;
+    overflow-y:auto;
+    overflow-x:hidden;
+    border-radius: 10px;
+}
+.footer-panel{
+	position: absolute;
+    margin-left: 25%;
+    margin-top: 220px;
+    width: 73%;
+    height: 90px;
+}
+}
+
+blockquote {
+    padding: 0 20px;
+    margin: 0;
+}
+    
+li > blockquote {
+    transform : scale(0.7) translateX(-25%);
+}

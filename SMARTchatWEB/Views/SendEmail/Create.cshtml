@@ -1,0 +1,48 @@
+﻿@using SMARTchat.BLL.DTOs
+@model SMARTchatWEB.Models.EmailViewModel
+@{
+    ViewBag.Title = "Form for invition your friends";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SMARTchat | Сhat</title>
+    <link rel="stylesheet" href="~/Content/style.css" media="screen" type="text/css" />
+    <link rel="icon" href="~/Content/Images/smart.png" type="image/x-icon">
+    <link rel="shortcut icon" href="~/Content/Images/smart.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/Content/font-awesome-4.6.3/css/font-awesome.min.css">
+</head>
+<body style="text-align: center;">
+    <p class="button28">@Html.ActionLink("Back to chat", "Index", "Chat",(ChannelDTO)@Model.Channel, FormMethod.Get)</p>
+    <header align="center">
+        <img src="/Content/Images/smart_logo.png" alt="SMARTbusiness">
+    </header>
+<h2>Invite your friend</h2>
+@*@{
+    ChannelDTO Channel = new ChannelDTO()
+    {
+        ChannelId=Model.Channel.ChannelId,
+        Name=Model.Channel.Name
+    };
+}*@
+    <section id="loginForm">
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <fieldset>
+            <legend>Fill next fields</legend>
+            @Html.EditorFor(m=>m.Channel.Name)
+            @Html.EditorForModel()
+            <input type="submit" class="btn btn-default" value="Ok" />
+        </fieldset>
+    }
+</section>
+    @section Scripts{
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</body>
+</html>
+   
+

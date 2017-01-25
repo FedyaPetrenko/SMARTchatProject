@@ -1,0 +1,40 @@
+﻿@model SMARTchatWEB.Models.ChannelViewModel
+@{
+    ViewBag.Title = "Change";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/Content/style.css" media="screen" type="text/css" />
+    <link rel="icon" href="/Content/Images/smart.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/Content/Images/smart.png" type="image/x-icon">
+    <link rel="stylesheet" href="/Content/font-awesome-4.6.3/css/font-awesome.min.css">
+</head>
+<body>
+    <p class="button28">@Html.ActionLink("Back to chat","Index","Chat")</p>
+<header id="smarticon">
+    <img src="/Content/Images/smart_logo.png" alt="SMARTbusiness">
+</header>
+
+@*    List of User`s channels, that already exist*@
+<ul class="channels">
+    <li>Channel 1&nbsp;<span class="fa fa-comments-o fa-2x"></span></li>
+</ul>
+
+<div class="form-group" align="center">
+    @Html.LabelFor(m => m.Name, new {@class = "col-md-5 control-label"})
+    <div>
+        @Html.TextBoxFor(m => m.Name, new {@class = "col-md-7 form-control"})
+    </div>
+</div>
+<div class="form-group">
+    <div class="mainButton">
+        <input type="submit" class="btn btn-default" value="Create channel"/>
+    </div>
+</div>
+
+
+</body>
+</html>

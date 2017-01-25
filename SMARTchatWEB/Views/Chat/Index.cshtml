@@ -1,0 +1,87 @@
+﻿@using SMARTchat.BLL.DTOs
+@model ChannelDTO
+@{
+    ViewBag.Title = "Mainchat";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMARTchat | Сhat</title>
+    <link rel="stylesheet" href="~/Content/style.css" media="screen" type="text/css" />
+    <link rel="icon" href="~/Content/Images/smart.png" type="image/x-icon">
+    <link rel="shortcut icon" href="~/Content/Images/smart.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/Content/font-awesome-4.6.3/css/font-awesome.min.css">
+    
+    
+    <script src="~/Scripts/shCore.js"></script>
+    <script src="~/Scripts/shBrushJScript.js"></script>
+    <script src="~/Scripts/shBrushCSharp.js"></script>
+    <link href="~/Content/shCore.css" rel="stylesheet" type="text/css" />
+    <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+    @section scripts
+    {
+        @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+        @Scripts.Render("~/Scripts/jquery.signalR-2.1.2.min.js")
+        @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+        @Scripts.Render("~/signalr/hubs")
+        @Scripts.Render("~/Scripts/hub.js")
+    }
+</head>
+<body>
+    <header class="smarticon">
+        <img src="~/Content/Images/smart_logo.png" alt="SMARTbusiness">
+        <span class="button28">@Html.ActionLink("Log out", "Login", "Account")</span>
+     </header>
+    <div class="chatContainer">
+        <div id="sidebar">
+            <ul>
+                <li>@Html.ActionLink("Invite friend", "Create", "SendEmail",@Model,FormMethod.Get)</li>
+            </ul>
+            <ul class="users"></ul>
+        </div>
+        <div class="main-content">
+            <div class="chat_name">
+                <span>"#"</span>
+                @Html.DisplayFor(m => m.ChannelId)
+                @Html.DisplayFor(m => m.Name)
+                <button type="button" class="editChatName"> <span class="fa fa-pencil-square-o" aria-hidden="true"></span></button>
+                <button type="button" class="deleteChat"> <span class="fa fa-trash" aria-hidden="true"></span></button>
+            </div>
+            <div>
+                <div id="messagebox">
+                    <table class="messages"></table>
+                </div>
+                <div class="footer-panel">
+                    <form>
+                        <button type="button" class="addCode"> <span class="fa fa-code fa-2x" aria-hidden="true"></span></button>
+                        <textarea id="message" wrap="virtual" placeholder="Type your message here..."></textarea>
+                        <span id="send">
+                            <input id="sendMessage" type="button" value="Send" />
+                            <input id="sendEditedMessage" type="button" value="Save changes" style="display: none;" />
+                            <input id="userId" type="hidden" value="" />
+                            <input id="userName" type="hidden" value="" />
+                            <input id="userImage" type="hidden" value="" />
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="rightsidebar">
+        <ul>
+            <li>@Html.ActionLink("My profile", "Profile", "Chat")</li>
+            <li>@Html.ActionLink("My favorite messages", "Favorites", "Chat")</li>
+            <li>@Html.ActionLink("Conversations", "GetChannels", "Chat")</li>
+        </ul>
+    </div>
+    @Html.HiddenFor(m => m.ChannelId, new { id = "channelId" });
+    @Html.HiddenFor(m => m.Name, new { id = "channelName" });
+<script type="text/javascript">
+    SyntaxHighlighter.all()
+</script>
+</body>
+</html>

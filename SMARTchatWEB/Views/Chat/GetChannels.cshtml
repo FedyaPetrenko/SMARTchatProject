@@ -1,0 +1,58 @@
+﻿@using SMARTchat.BLL.DTOs
+@model ChannelDTO
+@{
+    ViewBag.Title = "Conversations";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMARTchat | Сhat</title>
+    <link rel="stylesheet" href="~/Content/style.css" media="screen" type="text/css" />
+    <link rel="icon" href="~/Content/Images/smart.png" type="image/x-icon">
+    <link rel="shortcut icon" href="~/Content/Images/smart.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/Content/font-awesome-4.6.3/css/font-awesome.min.css">
+    @section scripts
+    {
+        @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+        @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+    }
+</head>
+<body>
+    <p class="button28">@Html.ActionLink("Log out", "Login", "Account")</p>
+    <header align="left" id="smarticon">
+        <img src="~/Content/Images/smart_logo.png" alt="SMARTbusiness">
+    </header>
+    <div class="cont">
+        <p class="info">My conversations</p>
+        <ol class="rounded-list">
+            @foreach (var chl in (IEnumerable<ChannelDTO>)ViewData["Channels"])
+            {
+                <li>@Html.ActionLink(chl.Name, "Index", chl)</li>
+            }
+        </ol>
+        <div class="group-container">
+        <div class="group">
+            @using (Html.BeginForm("Create", "Chat"))
+            {
+                @Html.TextBoxFor(m => m.Name, new { placeholder = "New channel...", @Value = Model.Name })
+                <div class="mainButton">
+                    <input type="submit" id="createChannelSubmit" class="btn btn-default" value="Create channel" />
+                </div>
+            }
+        </div>
+            <div class="group" >
+                @using (Html.BeginForm("Find", "Chat"))
+                {
+                    @Html.TextBoxFor(m => m.Name, new { placeholder = "Existing channel...", @Value = Model.Name })
+                    <div class="mainButton">
+                        <input type="submit" id="findChannelSubmit" class="btn btn-default" value="Find channel" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

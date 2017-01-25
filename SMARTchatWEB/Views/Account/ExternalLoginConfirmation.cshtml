@@ -1,0 +1,52 @@
+﻿@model SMARTchatWEB.Models.ExternalLoginConfirmationViewModel
+@{
+    ViewBag.Title = "Sign in";
+}
+<link rel="stylesheet" href="/Content/style.css" media="screen" type="text/css" />
+<link rel="icon" href="/Content/Images/smart.png" type="image/x-icon">
+<link rel="shortcut icon" href="/Content/Images/smart.png" type="image/x-icon">
+<header align="center">
+    <img src="/Content/Images/smart_logo.png" alt="SMARTbusiness">
+    <h3>Binding your  account @ViewBag.LoginProvider.</h3>
+</header>
+
+@using (Html.BeginForm("ExternalLoginConfirmation", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <p class="text-info" align="center">
+        You have successfully authenticated through <strong>@ViewBag.LoginProvider</strong>
+        Fill the fields on the site below and click "Sign up" to complete your input.
+    </p>
+    <div class="sign_in">
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "col-md-5 control-label" })
+            <div>
+                @Html.TextBoxFor(m => m.Name, new { @class = "col-md-7 form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName, new { @class = "col-md-5 control-label" })
+            <div>
+                @Html.TextBoxFor(m => m.LastName, new { @class = "col-md-7 form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "col-md-5 control-label" })
+            <div>
+                @Html.TextBoxFor(m => m.Email, new { @class = "col-md-7 form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="mainButton">
+                <input type="submit" class="btn btn-default" value="Sign up" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

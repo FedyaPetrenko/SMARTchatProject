@@ -1,0 +1,90 @@
+﻿@using SMARTchat.BLL.DTOs
+@model UserDTO
+@{
+    ViewBag.Title = "UserProfile";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SMARTchat | Сhat</title>
+    <link rel="stylesheet" href="~/Content/style.css" media="screen" type="text/css"/>
+    <link rel="icon" href="~/Content/Images/smart.png" type="image/x-icon">
+    <link rel="shortcut icon" href="~/Content/Images/smart.png" type="image/x-icon">
+    <link rel="stylesheet" href="~/Content/font-awesome-4.6.3/css/font-awesome.min.css">
+</head>
+<body>
+    <p class="button28">@Html.ActionLink("Log out", "Login", "Account")</p>
+<p class="button28">@Html.ActionLink("Back to chat", "Index", "Chat")</p>
+
+<header align="left" id="smarticon">
+    <img src="~/Content/Images/smart_logo.png" alt="SMARTbusiness">
+</header>
+
+<div id="container">
+    <p class="info">User Information</p>
+    <div id="avatar" class="container">
+        @Html.Raw("<img style: width='200px' height='200px' src=\"data:image/jpeg;base64,"
+                  + Model.Image + "\" />")
+        @using (Html.BeginForm("Profile", "Chat",
+            FormMethod.Post, new {enctype = "multipart/form-data"}))
+        {
+            <div class="container">
+                <label class="file_upload">
+                    <span class="button">Choose photo</span>
+                    <mark>No photo</mark>
+                    <input type="file" name="Image">
+                </label>
+                <input class="submit" type="submit" value="Open and save"/>
+            </div>
+        }
+    </div>
+    <ul class="first">
+        <li id="userName">Name:<span>@Model.Name</span></li>
+        <li id="userLName">Last Name:<span>@Model.LastName</span></li>
+        <li id="userEmail">Email:<span>@Model.Email</span></li>
+    </ul>
+</div>
+<script type="text/javascript">
+    $(function () {
+        var wrapper = $(".file_upload"),
+            inp = wrapper.find("input"),
+            btn = wrapper.find(".button"),
+            lbl = wrapper.find("mark");
+
+        // Crutches for the :focus style:
+        inp.focus(function () {
+            wrapper.addClass("focus");
+        }).blur(function () {
+            wrapper.removeClass("focus");
+        });
+
+        var file_api = (window.File && window.FileReader && window.FileList && window.Blob) ? true : false;
+
+        inp.change(function () {
+            var file_name;
+            if (file_api && inp[0].files[0])
+                file_name = inp[0].files[0].name;
+            else
+                file_name = inp.val().replace("C:\\fakepath\\", '');
+
+            if (!file_name.length)
+                return;
+
+            if (lbl.is(":visible")) {
+                lbl.text(file_name);
+                btn.text("Выбрать");
+            } else
+                btn.text(file_name);
+        }).change();
+
+    });
+    $(window).resize(function () {
+        $(".file_upload input").triggerHandler("change");
+    });
+
+</script>
+</body>
+</html>
